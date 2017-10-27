@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import Home from './Home';
 import Bikes from './Bikes';
 
@@ -8,7 +8,7 @@ class App extends Component {
     super();
 
     this.state = {
-      currentPage: 'Bikes'
+      currentPage: 'Home'
     };
 
     this.navigate = this.navigate.bind(this);
@@ -33,7 +33,7 @@ class App extends Component {
             <h1 className="App-title">Devin's Bike Shop</h1>
           </div>
           <div className="navContainer">
-            <div className="navElement" >
+            <div className="navElement" onClick={(e) => this.navigate(e, 'Bikes')} >
               <p>Bikes</p>
             </div>
             <div className="navElement">
