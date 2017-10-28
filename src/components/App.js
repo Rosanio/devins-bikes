@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import Home from './Home';
 import Bikes from './Bikes';
+import firebase from '../firebase';
+import Bike from '../models/Bike';
 
 class App extends Component {
   constructor() {
@@ -12,6 +14,21 @@ class App extends Component {
     };
 
     this.navigate = this.navigate.bind(this);
+  }
+
+  componentDidMount() {
+    const bikesRef = firebase.database().ref('bikes');
+    bikesRef.on('value', (snapshot) => {
+      let bikes = snapshot.val();
+      let bikesState = [];
+      for(let bikeId in bikes) {
+        let bike = bikes[bikeId];
+        bikesState.push(new Bike(bike.name, bike.price, bike.description, bike.image));
+      }
+      this.setState({
+        bikes: bikesState
+      });
+    })
   }
 
   navigate(e, page) {
@@ -45,6 +62,7 @@ class App extends Component {
           </div>
         </header>
         {currentComponent}
+
       </div>
     );
   }
