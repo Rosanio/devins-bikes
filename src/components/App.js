@@ -4,6 +4,7 @@ import Home from './Home';
 import Bikes from './Bikes';
 import firebase from '../firebase';
 import Bike from '../models/Bike';
+import About from './About'
 
 class App extends Component {
   constructor() {
@@ -41,6 +42,8 @@ class App extends Component {
       currentComponent = <Home />;
     } else if(this.state.currentPage === 'Bikes') {
       currentComponent = <Bikes bikes={this.state.bikes} />;
+    } else if(this.state.currentPage === 'About') {
+      currentComponent = <About />;
     }
     return (
       <div className="App">
@@ -53,7 +56,7 @@ class App extends Component {
             <div className="navElement" onClick={(e) => this.navigate(e, 'Bikes')} >
               <p>Bikes</p>
             </div>
-            <div className="navElement">
+            <div className="navElement" onClick={(e) => this.navigate(e, 'About')} >
               <p>About</p>
             </div>
             <div className="navElement">

@@ -1,0 +1,15 @@
+.devin-image {
+  width: 400px;
+  height: 250px;
+}
+
+.devin-image-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.about-text {
+  margin-left: 20px;
+  margin-right: 20px;
+}
