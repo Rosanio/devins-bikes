@@ -1,12 +1,20 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-img {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   float:left;
-  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -20px;
+  margin-right: 30px;
+}
+
+.App-img:hover {
+  cursor: pointer;
 }
 
 .title-div {
@@ -19,7 +27,6 @@
   color: white;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -47,7 +54,7 @@
 }
 
 .navElement:hover {
-  border-bottom: 3px solid #19829E;
+  border-bottom: 3px solid #22ffff;
   cursor: pointer;
 }
 
